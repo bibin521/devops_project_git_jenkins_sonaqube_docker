@@ -39,6 +39,62 @@ echo \
   -------------------------------
   usermod -aG docker ubuntu
 
+  # step-2 - install jenkins on the server
+  1  sudo apt update
+    2  sudo apt install openjdk-11-jre
+    3  java -version
+    4  curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+    5  echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]   https://pkg.jenkins.io/debian binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
+    6  sudo apt-get update
+    7  sudo apt-get install jenkins
+    8  systemctl status jenkin
+
+    # step3 - Install sonarqube on the server
+    sudo apt-get install openjdk-17-jdk -y
+    2  wget https://www.sonarsource.com/products/sonarqube/downloads/success-download-community-edition/
+    3  ls
+    4  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.1.0.73491.zip
+    5  ll
+    6  sudo apt install unzip
+    7  ll
+    8  unzip sonarqube-10.1.0.73491.zip 
+    9  ll
+   10  cd sonarqube-10.1.0.73491/
+   11  ll
+   12  cd bin/
+   13  ls
+   14  cd linux-x86-64/
+   15  ls
+   16  ./sonar.sh 
+   17  ./sonar.sh console
+
+
+http://sonarqube_server_ip:9000
+
+# step-3 - install the following plugins to the jenkins
+1. sonarqubescanner
+2. ssh2-easy
+3. do the sonarqube configuration in jenkins
+
+# step-4
+login to jenkins server
+sudo su jenkins
+create ssh_key ===> ssh-keygen
+and paste the ssh-key to the jenkins   ===> ssh-copy-id ubuntu@52.66.29.3
+
+
+go to the docker server
+sudo su 
+vi /etc/ssh/sshd_config
+then enable password authentication 
+
+step-5
+
+
+
+
+    
+
   
 
 
