@@ -3,7 +3,6 @@ https://www.youtube.com/watch?v=361bfIvXMBI
 
 # diagram
 
-file:///home/bibin/Pictures/Screenshots/Screenshot%20from%202023-06-24%2016-24-48.png
 
 
 # requirements
